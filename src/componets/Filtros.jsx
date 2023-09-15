@@ -1,17 +1,20 @@
 import { useState } from "react"
+import { useFiltrado } from "../hooks/useFiltrado"
 
-export function Filtros({parSetFilters}){
+export function Filtros(){
 
-    const [minPrice, setMinPrice] = useState(0)
+    const {filtrando, setFilters} = useFiltrado 
+
+     const [minPrice, setMinPrice] = useState(0)
 
     const hadleChangePrice = (e)=>{
         setMinPrice(e.target.value)
     
-        parSetFilters((prevState)=>({...prevState, minPrice:e.target.value}))
+        setFilters((prevState)=>({...prevState, minPrice:e.target.value}))
     }
     
     const hadleChangeCategory = (e)=>{
-        parSetFilters((prevState)=>({...prevState, category: e.target.value}))
+        setFilters((prevState)=>({...prevState, category: e.target.value}))
     }
 
     return(
