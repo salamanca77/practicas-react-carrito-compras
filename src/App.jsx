@@ -4,6 +4,7 @@ import { useFiltrado } from "./hooks/useFiltrado"
 import { products as inicioProductos } from "./datos/db.json"
 import { useState } from "react"
 import { Card } from "./componets/Card"  
+import { CardProvider } from "./context/card"
 
 function App() {
 
@@ -13,12 +14,12 @@ function App() {
 
   const filtrados = filtrando(products)
 
-  return (
-    <>
+  return(
+    <CardProvider>
        <Card />
       <Header />
       <Productos products={filtrados} />
-    </>
+    </CardProvider>
   )
 }
 

@@ -5,7 +5,7 @@ export function Filtros(){
 
     const {filters, setFilters} = useFiltrado() 
     
-    console.log(filters);
+    // console.log(filters);
     const hadleChangePrice = (e)=>{
     
         setFilters((prevState)=>({...prevState, minPrice:e.target.value}))

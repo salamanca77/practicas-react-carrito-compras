@@ -1,6 +1,13 @@
+import {AddToCartIcon} from './Icons'
+import { useCard } from '../hooks/useCard';
+
 export function Productos({products}){
-    
-    console.log(products);
+    const {addToCard, card} = useCard()     
+    // console.log(card);
+
+    // console.log(products);
+
+
     return(
         <div>
             <ul>
@@ -12,6 +19,9 @@ export function Productos({products}){
                         </div>-${product.price}
                         <div>
                             {product.category}
+                        </div>
+                        <div>
+                            <button ><AddToCartIcon /></button>    
                         </div>  
                     </li>                    
                 ))}
