@@ -1,4 +1,4 @@
-import { useContext} from "react"
+  import { useContext} from "react"
 import { FiltersContext } from "../context/filters" 
 
 export const useFiltrado = ()=>{
@@ -13,5 +13,5 @@ export const useFiltrado = ()=>{
         )
        })
     }
-    return{filtrando, setFilters}
+    return{filtrando,filters, setFilters}
   }

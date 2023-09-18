@@ -3,12 +3,10 @@ import { useFiltrado } from "../hooks/useFiltrado"
 
 export function Filtros(){
 
-    const {filtrando, setFilters} = useFiltrado 
-
-     const [minPrice, setMinPrice] = useState(0)
-
+    const {filters, setFilters} = useFiltrado() 
+    
+    console.log(filters);
     const hadleChangePrice = (e)=>{
-        setMinPrice(e.target.value)
     
         setFilters((prevState)=>({...prevState, minPrice:e.target.value}))
     }
@@ -21,8 +19,8 @@ export function Filtros(){
         <section>
             <div>
                 <label htmlFor="price">Precio a partir de</label>
-                <input id="price" type="range" min='0' max='1000' onChange={hadleChangePrice} />
-                <span>${minPrice}</span>
+                <input id="price" value={filters.minPrice} type="range" min='0' max='1000' onChange={hadleChangePrice} />
+                <span>${filters.minPrice}</span>
             </div>
             <div>
                 <label htmlFor="category"></label>

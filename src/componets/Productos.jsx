@@ -1,4 +1,6 @@
 export function Productos({products}){
+    
+    console.log(products);
     return(
         <div>
             <ul>
